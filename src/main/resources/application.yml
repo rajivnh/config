@@ -1,0 +1,20 @@
+server:
+  port: 86
+  
+spring:
+ application:
+   name: config
+ profiles:
+   active: native
+ cloud:
+  config:
+    server:
+      native:
+        search-locations:
+        - classpath:/config/{profile}
+
+eureka:
+  client:
+    region: default
+    service-url:
+      defaultZone: http://127.0.0.1:83/eureka
